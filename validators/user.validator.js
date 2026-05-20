@@ -26,8 +26,8 @@ const updateProfileRules = [
     })
     .bail()
     .if((value) => value !== null)
-    .isEmail().withMessage("email must be a valid email")
-    .normalizeEmail(),
+    .trim()
+    .isEmail().withMessage("email must be a valid email"),
 
   body("role")
     .not().exists().withMessage("role cannot be updated here"),

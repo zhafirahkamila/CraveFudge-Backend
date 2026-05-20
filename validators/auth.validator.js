@@ -17,8 +17,8 @@ const registerRules = [
 
   body("email")
     .optional({ checkFalsy: true })
-    .isEmail().withMessage("email must be a valid email")
-    .normalizeEmail(),
+    .trim()
+    .isEmail().withMessage("email must be a valid email"),
 
   body("password")
     .exists({ checkFalsy: true }).withMessage("password is required")
